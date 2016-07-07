@@ -1,0 +1,6 @@
+---
+- hosts: local
+  tasks:
+    - name: Download the repository
+      git: repo=git@github.com:trbecker/my-desktop.git
+           dest:~/.my-desktop

@@ -1,0 +1,27 @@
+[submodule "bundle/colorschemes"]
+	path = bundle/colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "bundle/-stl-syntax"]
+	path = bundle/-stl-syntax
+	url = https://github.com/Mizuchi/STL-Syntax.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "bundle/vimtex"]
+	path = bundle/vimtex
+	url = https://github.com/lervag/vimtex.git
+[submodule "bundle/vim2hs"]
+	path = bundle/vim2hs
+	url = https://github.com/dag/vim2hs.git
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
+	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "bundle/robotframework"]
+	path = bundle/robotframework
+	url = https://github.com/mfukar/robotframework-vim.git
+[submodule "bundle/sensible"]
+	path = bundle/sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "bundle/plantuml"]
+	path = bundle/plantuml
+	url = https://github.com/aklt/plantuml-syntax.git

@@ -1,6 +1,8 @@
 ---
-- hosts: local
+- hosts: localhost
   tasks:
-    - name: Download the repository
-      git: repo=git@github.com:trbecker/my-desktop.git
-           dest:~/.my-desktop
+#    - name: Download the repository
+#      git: repo=git@github.com:trbecker/my-desktop.git
+#           dest:~/.my-desktop
+
+    - include: ~/.my-desktop/my-desktop.ansible

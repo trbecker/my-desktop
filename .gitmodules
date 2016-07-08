@@ -1,0 +1,24 @@
+[submodule "vimrc/bundle/vim-colorschemes"]
+	path = vimrc/bundle/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "vimrc/bundle/STL-Syntax"]
+	path = vimrc/bundle/STL-Syntax
+	url = https://github.com/Mizuchi/STL-Syntax.git
+[submodule "vimrc/bundle/vim-fugitive"]
+	path = vimrc/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vimrc/bundle/vimtex"]
+	path = vimrc/bundle/vimtex
+	url = https://github.com/lervag/vimtex.git
+[submodule "vimrc/bundle/vim2hs"]
+	path = vimrc/bundle/vim2hs
+	url = https://github.com/dag/vim2hs.git
+[submodule "vimrc/bundle/minibufexplorer.vim"]
+	path = vimrc/bundle/minibufexplorer.vim
+	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "vimrc/bundle/robotframework-vim"]
+	path = vimrc/bundle/robotframework-vim
+	url = https://github.com/mfukar/robotframework-vim.git
+[submodule "vimrc/bundle/vim-sensible"]
+	path = vimrc/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git

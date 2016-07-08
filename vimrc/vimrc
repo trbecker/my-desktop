@@ -53,7 +53,6 @@ if &t_Co > 2 || has('gui_running')
 endif
 
 set list
-set listchars=tab:››,trail:×,precedes:<,extends:>
 autocmd filetype html,xml set listchars-=tab:>.
 
 set pastetoggle=<F2>

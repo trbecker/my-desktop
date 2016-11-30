@@ -1,23 +1,2 @@
-#!/bin/bash
-# Openbox autostart script, by Thiago Rafael Becker
-
-# Ah, gnome...
-# See https://bugs.launchpad.net/ubuntu/+source/at-spi2-core/+bug/1193236
-export NO_AT_BRIDGE=1
-
-# Start the settings daemon
-# You may change the settings daemon to one of your chosing
-SETTINGS_DAEMON=unity-settings-daemon
-if which ${SETTINGS_DAEMON} >/dev/null 2>&1; then
-  ${SETTINGS_DAEMON} &
-else
-  echo "${SETTINGS_DAEMON} not found"
-fi
-
-# Start the session manager
-SESSION_MANAGER=openbox-session
-if which ${SESSION_MANAGER} >/dev/null 2>&1; then
-  ${SESSION_MANAGER} &
-else
-  echo "${SESSION_MANAGER} not found"
-fi
+MPATH=$(dirname ${0})
+/bin/bash $MPATH/autostart.bash

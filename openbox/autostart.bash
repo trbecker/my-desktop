@@ -32,7 +32,7 @@ function start_app {
 
 # Start the settings daemon
 # You may change the settings daemon to one of your chosing
-start_app unity-settings-daemon
+start_app /usr/libexec/gnome-settings-daemon
 
 # Start the session manager
 start_app openbox-session
@@ -53,3 +53,4 @@ start_app stalonetray --dockapp-mode simple \
 start_app slack
 start_app skype
 
+start_app dunst

@@ -40,10 +40,6 @@ set encoding=utf-8
 filetype on
 filetype plugin indent on
 
-if has('autocmd')
-	autocmd filetype python set expandtab
-endif
-
 if &t_Co >= 256 || has('gui_running')
 	colorscheme ir_black
 endif
@@ -53,10 +49,8 @@ if &t_Co > 2 || has('gui_running')
 endif
 
 set list
-autocmd filetype html,xml set listchars-=tab:>.
 
 set pastetoggle=<F2>
-set mouse=a
 
 map <C-h> <C-w>h
 map <C-j> <C-w>j

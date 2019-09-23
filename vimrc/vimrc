@@ -41,7 +41,7 @@ filetype on
 filetype plugin indent on
 
 if &t_Co >= 256 || has('gui_running')
-	colorscheme ir_black
+	colorscheme slate
 endif
 
 if &t_Co > 2 || has('gui_running')
@@ -59,7 +59,7 @@ map <C-l> <C-w>l
 
 nmap <silent> ,/ :nohlsearch<CR>
 
-set statusline=%<%F%h%m%r%h%w%{fugitive#statusline()}\ %=\ %04l;%02v\ %P
+set statusline=%<%F%h%m%r%h%w\ %=\ %04l;%02v\ %P
 set laststatus=2
 
 set wildmenu

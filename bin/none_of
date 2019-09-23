@@ -1,0 +1,12 @@
+#!/usr/bin/python
+import sys
+
+# any_of field value_1 .. value_n
+# builds a query in the format field == value_1 || ... field == value_n
+
+field = sys.argv[1]
+values = sys.argv[2:]
+
+atoms = map(lambda x: '%s != %s' % (field, x), values)
+
+print ' && '.join(atoms)

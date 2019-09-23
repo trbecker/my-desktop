@@ -1,44 +1,14 @@
 ---
-- name: Add Google Chrome key
-  sudo: yes
-  shell: wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-
-- name: Add Spotify key
-  sudo: yes
-  shell: sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2
-
-- name: Add Spotify repository
-  sudo: yes
-  shell: echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-
 - name: Install packages
-  sudo: yes
-  apt: update_cache=yes name={{ item }} state=present
-  with_items:
-    - virtualbox
-    - vim-common
-    - vim-runtime
-    - vim-gtk
-    - ansible
-    - openbox
-    - thunar
-    - google-chrome-stable
-    - build-essential
-    - nautilus-dropbox
-    - terminator
-    - gimp
-    - libreoffice-gtk3
-    - python-pip
-    - audacity
-    - libav-tools
-    - libmp3lame0
-    - pitivi
-    - docker.io
-    - texlive-latex-extra
-    - texlive-pictures
-    - scrot
-    - menu
-    - spotify-client
+  become: yes
+  become_user: root
+  dnf: 
+    state: latest
+    name: 
+      - vim-common
+      - vim-enhanced
+      - openbox
+      - terminator
 
 - name: Create vim configuration directory
   file: src=~/.my-desktop/vimrc dest=~/.vim state=link
@@ -52,5 +22,5 @@
 - name: Install aliases
   file: src=~/.my-desktop/bash_aliases dest=~/.bash_aliases state=link
 
-- name: Add my user to the docker group
-  user: name=trbecker group=docker
+- name: Install .bin
+  file: src=~/.my-desktop/bin dest=~/.local/bin state=link

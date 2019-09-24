@@ -1,14 +1,53 @@
 ---
+- name: Get current kernel version
+  shell: uname -r | sed 's/\.x86_64//'
+  register: uname
+
+- name: Get username
+  shell: whoami
+  register: whoami
+
+- name: Enable updates-debuginfo
+  become: yes
+  become_user: root
+  shell: dnf config-manager --set-enabled updates-debuginfo
+
+- name: Enable fedora-debuginfo
+  become: yes
+  become_user: root
+  shell: dnf config-manager --set-enabled fedora-debuginfo
+
 - name: Install packages
   become: yes
   become_user: root
   dnf: 
     state: latest
-    name: 
+    enablerepo: fedora-debuginfo
+    name:
       - vim-common
       - vim-enhanced
       - openbox
       - terminator
+      - golang
+      - wireshark
+      - crash
+      - systemtap
+      - kernel-headers-{{ uname.stdout }}
+      - kernel-devel-{{ uname.stdout }}
+      - kernel-debuginfo-{{ uname.stdout }}
+      - ansible
+      - arduino
+      - avrdude
+      - clang
+      - darktable
+      - dunst
+      - ImageMagick
+      - irssi
+      - mutt
+      - nfs-utils
+      - tcpdump
+      - @virtualization
+
 
 - name: Create vim configuration directory
   file: src=~/.my-desktop/vimrc dest=~/.vim state=link
@@ -24,3 +63,17 @@
 
 - name: Install .bin
   file: src=~/.my-desktop/bin dest=~/.local/bin state=link
+
+- name: Start and enable sshd
+  systemd:
+    name: sshd
+    state: started
+    enabled: true
+
+- name: Install termshark
+  shell: GO111MODULE=on go get github.com/gcla/termshark/cmd/termshark
+
+- name: Clone kernel repository
+  git:
+    repo: 'https://github.com/torvalds/linux.git'
+    dest: /home/{{ whoami.stdout }}/kernel
